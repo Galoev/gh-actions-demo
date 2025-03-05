@@ -23,6 +23,10 @@ jobs:
                 python -m venv .venv
                 source .venv/bin/activate
                 pip install -r requirements.txt
+            
+            - name: Run linter
+              run: |
+                source .venv/bin/activate
                 flake8 app.py
             
             - name: Run test
