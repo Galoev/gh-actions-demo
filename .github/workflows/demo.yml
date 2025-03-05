@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
     push:
       branches:
-        - main
+        - master
         - 'releases/**'
 
 jobs:
@@ -24,5 +24,8 @@ jobs:
                 source .venv/bin/activate
                 pip install -r requirements.txt
                 flake8 app.py
+            
+            - name: Run test
+              run: |
+                source .venv/bin/activate
                 pytest tests.py
-                
